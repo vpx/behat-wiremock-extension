@@ -10,7 +10,7 @@ use GuzzleHttp\ClientInterface;
 class Wiremock
 {
     const PATH_MAPPINGS_RESET = '/__admin/mappings/reset';
-    const PATH_MAPPINGS       = '/__admin/mappings';
+    const PATH_MAPPINGS = '/__admin/mappings';
 
     /**
      * @var ClientInterface
@@ -40,10 +40,24 @@ class Wiremock
      */
     public function __construct(ClientInterface $client, string $baseUrl, string $mappingPath, array $preloadMappings)
     {
-        $this->client          = $client;
-        $this->baseUrl         = $baseUrl;
-        $this->mappingPath     = $mappingPath;
+        $this->client = $client;
+        $this->baseUrl = $baseUrl;
+        $this->mappingPath = $mappingPath;
         $this->preloadMappings = $preloadMappings;
+    }
+
+    /**
+     * @param array $mappings
+     */
+    public function loadMappings(array $mappings)
+    {
+        foreach ($mappings as $mapping) {
+            if (!isset($mapping['service']) || !isset($mapping['mapping'])) {
+                throw new WiremockException('You must provide a `service` and `mapping` column in your table node.');
+            }
+
+            $this->addMappingForService($mapping['mapping'], $mapping['service']);
+        }
     }
 
     /**
@@ -84,6 +98,8 @@ class Wiremock
                 sprintf('Wiremock resetting was not completed. The response is: %s', $response->getBody())
             );
         }
+
+        $this->loadMappings($this->preloadMappings);
     }
 
     /**
