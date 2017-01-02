@@ -4,6 +4,7 @@
     "description": "",
     "keywords": ["behat", "mock", "wiremock"],
     "require": {
+        "php": ">=7.0.0",
         "behat/behat": "~3.2",
         "symfony/config": "~3.2",
         "guzzlehttp/guzzle": "~6.0"
@@ -16,7 +17,9 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Behat\\WiremockExtension": "src/" }
+        "psr-4": {
+            "Behat\\WiremockExtension": "src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {

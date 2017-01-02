@@ -25,9 +25,7 @@ class WiremockExtension implements ExtensionInterface
     }
 
     /**
-     * Setups configuration for the extension.
-     *
-     * @param ArrayNodeDefinition $builder
+     * {@inheritdoc}
      */
     public function configure(ArrayNodeDefinition $builder)
     {
@@ -79,7 +77,6 @@ class WiremockExtension implements ExtensionInterface
      */
     public function process(ContainerBuilder $container)
     {
-
     }
 
     /**
