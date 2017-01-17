@@ -2,17 +2,17 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\ServiceContainer;
+namespace VPX\WiremockExtension\ServiceContainer;
 
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
 use Behat\Testwork\ServiceContainer\Extension as ExtensionInterface;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
-use Behat\WiremockExtension\Context\Initializer\WiremockAwareInitializer;
 use GuzzleHttp\Client;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
+use VPX\WiremockExtension\Context\Initializer\WiremockAwareInitializer;
 
 class WiremockExtension implements ExtensionInterface
 {

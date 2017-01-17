@@ -2,7 +2,7 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@auto1.com>
  */
-namespace Behat\WiremockExtension\Exception;
+namespace VPX\WiremockExtension\Exception;
 
 class WiremockException extends \RuntimeException implements ExceptionInterface
 {

@@ -2,9 +2,9 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\Context;
+namespace VPX\WiremockExtension\Context;
 
-use Behat\WiremockExtension\ServiceContainer\Wiremock;
+use VPX\WiremockExtension\ServiceContainer\Wiremock;
 
 interface WiremockAwareContextInterface
 {

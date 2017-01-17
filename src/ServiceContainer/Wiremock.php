@@ -2,10 +2,10 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\ServiceContainer;
+namespace VPX\WiremockExtension\ServiceContainer;
 
-use Behat\WiremockExtension\Exception\WiremockException;
 use GuzzleHttp\ClientInterface;
+use VPX\WiremockExtension\Exception\WiremockException;
 
 class Wiremock
 {
