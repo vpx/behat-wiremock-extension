@@ -53,7 +53,10 @@ class Wiremock
     {
         foreach ($mappings as $mapping) {
             if (!isset($mapping['service']) || !isset($mapping['mapping'])) {
-                throw new WiremockException('You must provide a `service` and `mapping` column in your table node.');
+                throw new WiremockException(
+                    'You must provide a `service` and `mapping` column in your table node.',
+                    500
+                );
             }
 
             $this->addMappingForService($mapping['mapping'], $mapping['service']);
@@ -77,7 +80,8 @@ class Wiremock
 
         if (201 !== $response->getStatusCode()) {
             throw new WiremockException(
-                sprintf('Wiremock\'s mapping was not added. The reason is: %s', $response->getBody())
+                sprintf('Wiremock\'s mapping was not added. The reason is: %s', $response->getBody()),
+                $response->getStatusCode()
             );
         }
     }
@@ -95,7 +99,8 @@ class Wiremock
 
         if (200 !== $response->getStatusCode()) {
             throw new WiremockException(
-                sprintf('Wiremock resetting was not completed. The response is: %s', $response->getBody())
+                sprintf('Wiremock resetting was not completed. The response is: %s', $response->getBody()),
+                $response->getStatusCode()
             );
         }
 
@@ -122,13 +127,13 @@ class Wiremock
         $path = sprintf('%s/%s/%s', rtrim($this->mappingPath, '/'), $service, ltrim($mapping, '/'));
 
         if (!is_file($path)) {
-            throw new WiremockException(sprintf('Mapping file %s does not exist.', $path));
+            throw new WiremockException(sprintf('Mapping file `%s` does not exist.', $path), 404);
         }
 
         $content = file_get_contents($path);
 
-        if (false === $content) {
-            throw new WiremockException(sprintf('Mapping file %s is empty.', $path));
+        if (empty($content)) {
+            throw new WiremockException(sprintf('Mapping file `%s` is empty.', $path), 409);
         }
 
         return $content;
