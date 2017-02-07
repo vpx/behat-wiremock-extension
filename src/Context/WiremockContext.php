@@ -2,13 +2,13 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\Context;
+namespace VPX\WiremockExtension\Context;
 
 use Behat\Behat\Context\Context as ContextInterface;
 use Behat\Behat\Definition\Call\Given;
 use Behat\Behat\Hook\Call\BeforeScenario;
 use Behat\Gherkin\Node\TableNode;
-use Behat\WiremockExtension\Exception\WiremockException;
+use VPX\WiremockExtension\Exception\WiremockException;
 
 class WiremockContext extends WiremockAwareContext implements ContextInterface
 {

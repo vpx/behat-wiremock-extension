@@ -2,9 +2,9 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\Context;
+namespace VPX\WiremockExtension\Context;
 
-use Behat\WiremockExtension\ServiceContainer\Wiremock;
+use VPX\WiremockExtension\ServiceContainer\Wiremock;
 
 class WiremockAwareContext implements WiremockAwareContextInterface
 {
@@ -26,6 +26,6 @@ class WiremockAwareContext implements WiremockAwareContextInterface
      */
     public function getWiremock(): Wiremock
     {
-       return $this->wiremock;
+        return $this->wiremock;
     }
 }

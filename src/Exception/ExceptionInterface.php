@@ -2,7 +2,7 @@
 /**
  * @author Vitalii Piskovyi <vitalii.piskovyi@gmail.com>
  */
-namespace Behat\WiremockExtension\Exception;
+namespace VPX\WiremockExtension\Exception;
 
 interface ExceptionInterface
 {
