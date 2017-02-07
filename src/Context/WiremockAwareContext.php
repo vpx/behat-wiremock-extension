@@ -26,6 +26,6 @@ class WiremockAwareContext implements WiremockAwareContextInterface
      */
     public function getWiremock(): Wiremock
     {
-       return $this->wiremock;
+        return $this->wiremock;
     }
 }
