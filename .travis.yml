@@ -11,13 +11,12 @@ services:
 before_install:
   - docker info
 
+install:
+    - composer install --prefer-dist
+
 script:
   - docker run -d --name wiremock -p 8080:8080 rodolpheche/wiremock
   - docker logs wiremock
   - docker exec wiremock curl -sS http://localhost:8080/__admin/
   - docker rm -f wiremock
-
-install:
-    - composer install --prefer-dist
-
-script: make test
+  - make test
