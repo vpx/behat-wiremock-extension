@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/path/to/awesome/method2"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "success": true
+    }
+  }
+}
