@@ -17,9 +17,6 @@ install:
 script:
   - docker run -d --name wiremock -p 8080:8080 rodolpheche/wiremock
   - sleep 5
-  - docker ps -a
-  - docker logs wiremock
-  - sleep 5
-  - docker exec wiremock curl -sS http://localhost:8080/__admin/
-  - docker rm -f wiremock
   - make test
+  - docker rm -f wiremock
+

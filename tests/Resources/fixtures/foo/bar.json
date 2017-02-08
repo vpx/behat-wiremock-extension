@@ -1,10 +1,10 @@
 {
   "request": {
-    "method": "POST",
-    "urlPath": "/path/to/awesome/method2"
+    "method": "GET",
+    "urlPath": "/path/to/awesome/method"
   },
   "response": {
-    "status": 200,
+    "status": 201,
     "jsonBody": {
       "success": true
     }
