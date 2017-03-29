@@ -112,7 +112,6 @@ class WiremockTest extends \PHPUnit_Framework_TestCase
         $this->expectExceptionCode(500);
         $this->expectExceptionMessage('Wiremock resetting was not completed. The response is: foo');
 
-
         $this->wiremock->resetMappings();
     }
 
@@ -151,7 +150,6 @@ class WiremockTest extends \PHPUnit_Framework_TestCase
         $this->resetResponseMock = $this->getMockBuilder(ResponseInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
-
 
         $this->wiremock = new Wiremock(
             $this->guzzleClientMock,
