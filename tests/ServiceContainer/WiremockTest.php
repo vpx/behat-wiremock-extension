@@ -257,6 +257,6 @@ class WiremockTest extends \PHPUnit_Framework_TestCase
      */
     private function getMappingsPath(): string
     {
-        return __DIR__ . '/../Resources';
+        return __DIR__ . '/../Resources/fixtures';
     }
 }

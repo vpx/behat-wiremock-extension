@@ -1,0 +1,19 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://localhost:8080
+      sessions:
+        default:
+          goutte: ~
+    VPX\WiremockExtension\ServiceContainer\WiremockExtension:
+        base_url: http://localhost:8080
+        mapping_path: %paths.base%/tests/Resources/fixtures
+        preload_mappings:
+          - { service: foo, mapping: bar.json }
+  suites:
+    default:
+      paths:
+        - %paths.base%/tests/Resources/features
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+        - VPX\WiremockExtension\Context\WiremockContext

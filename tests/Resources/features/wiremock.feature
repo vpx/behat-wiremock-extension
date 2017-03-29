@@ -1,9 +1,3 @@
-# behat-wiremock-extension
-
-[![Build Status](https://travis-ci.org/vpx/behat-wiremock-extension.svg?branch=master)](https://travis-ci.org/vpx/behat-wiremock-extension)
-
-```gherkin
-# app.feature
 @wiremock-reset
 Feature: Wiremock
 
@@ -17,4 +11,3 @@ Feature: Wiremock
     When I am on "http://localhost:8080/path/to/awesome/method"
     Then the response status code should be 201
     And the response should contain "{\"success\":true}"
-```
